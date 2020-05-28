@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container">
+
+    {% for Song in object_list %}
+
+    <div class="card">
+  <h5 class="card-header">{{ Song.album_cat.albumName }}</h5>
+  <div class="card-body">
+    <h5 class="card-title">{{ Song.song_name }}</h5>
+    <p class="card-text">{{ Song.song_lyrics }}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
