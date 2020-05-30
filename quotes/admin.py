@@ -2,8 +2,8 @@ from django.contrib import admin
 
 # Register your models here.
 
-from . models import Album
-from . models import Song
+from . models import tbl_category
+from . models import tbl_adminPost
 
-admin.site.register(Album)
-admin.site.register(Song)
+admin.site.register(tbl_category)
+admin.site.register(tbl_adminPost)

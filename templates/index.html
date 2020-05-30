@@ -96,38 +96,83 @@
 
 
 
-
-
-
-
 <div class="container">
-    <h1>my site</h1>
 
-    {% for Song in object_list %}
+    <div class="row">
+            <div class="col-sm-8">
 
-    <div class="card">
-  <h5 class="card-header">{{ Song.album_cat.albumName }}</h5>
+    {% for tbl_adminPost in object_list %}
+
+    <div class="card pt-4 pl-4 pb-4 pr-4 mt-5">
+  <h5 class="card-header">{{ tbl_adminPost.ap_postTitle }}</h5>
   <div class="card-body">
-    <h5 class="card-title">{{ Song.song_name }}</h5>
-    <p class="card-text">{{ Song.song_lyrics }}</p>
+    <h5 class="card-title">{{ tbl_adminPost.ap_postPost }}</h5>
+      <h5 class="card-title">{{ tbl_adminPost.ap_postDateTime }}</h5>
+    <p class="card-text">{{ tbl_adminPost.post_cat.cat_name }}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
+        <img src="{{ tbl_adminPost.get_photo_url }}" alt="image" class="img-fluid img-thumbnail img-rounded"
+                        alt="Responsive image">
 </div>
 
     {% endfor %}
 
 </div>
+            </div>
+</div>
 
 
 
 
- <script src="{% static 'js/jquery.js' %}"></script>
- <script src="{% static  'js/pooper.js' %}"></script>
- <script src="{% static  'js/bootstrap.min.js' %}"></script>
+
+
+ <!--fotter -->
+
+
+  <div class="jumbotron jumbotron-fluid jmb">
+        <div class="container">
+
+
+            <div id="footer" style="text-align: center;  color:aliceblue;">
+                <!-- starting of footer-->
+                <hr>
+                <p> Theme by | azizur rahman | &copy;2016-2017 all right reserved </p>
+
+
+                <p>
+                    <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#contentId"
+                        aria-expanded="false" aria-controls="contentId">
+                        About Me
+                    </button>
+                </p>
+                <div class="collapse" id="contentId">
+                    Name:AZIZUR RAHMAN <br>
+                    EMAIL: aaziz9642@gmail.com
+
+                </div>
+
+
+                <a href="#">
+                    <p>This is only for study purpose</p>
+                </a>
+                <hr>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
 
 
 
 <!--java script metho--->
+
+ <script src="{% static 'js/jquery.js' %}"></script>
+ <script src="{% static  'js/pooper.js' %}"></script>
+ <script src="{% static  'js/bootstrap.min.js' %}"></script>
 
   <script>
     $('.dropdown').mouseenter(function() {
